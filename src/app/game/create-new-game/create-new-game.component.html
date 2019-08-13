@@ -1,0 +1,6 @@
+<p>create-new-game works!</p>
+<div>
+	<button (click)="this.startNewGame()">Start New Game</button>
+	<button (click)="this.connect()">Connect</button>
+	<button *ngIf="this.client" (click)="this.send()">Send</button>
+</div>

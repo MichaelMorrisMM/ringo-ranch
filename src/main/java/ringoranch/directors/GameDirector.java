@@ -1,6 +1,7 @@
 package ringoranch.directors;
 
 import ringoranch.models.*;
+import ringoranch.util.Input;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,6 +26,10 @@ public class GameDirector {
       players.add(new HumanPlayer());
 
       game = new Game(rules, banker, players, board, dice);
+   }
+
+   public static void processInput(Input input) {
+      game.handlePlayerInput(input);
    }
 
    public static RuleSet getDefaultRules() {

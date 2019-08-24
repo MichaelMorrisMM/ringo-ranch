@@ -1,21 +1,34 @@
 package ringoranch.util;
 
+import ringoranch.models.Action;
+
 public class Input {
-	
-	private String action;
-	
-	public Input() {
+
+   private int idPlayer;
+	private Action action;
+
+	public Input(int idPlayer) {
+	   this.idPlayer = idPlayer;
 	}
-	
-	public Input(String action) {
+
+	public Input(int idPlayer, Action action) {
+	   this(idPlayer);
 		this.action = action;
 	}
-	
-	public String getAction() {
+
+	public int getIdPlayer() {
+	   return this.idPlayer;
+   }
+
+   public void setIdPlayer(int idPlayer) {
+	   this.idPlayer = idPlayer;
+   }
+
+	public Action getAction() {
 		return this.action;
 	}
-	
-	public void setAction(String action) {
+
+	public void setAction(Action action) {
 		this.action = action;
 	}
 

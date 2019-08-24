@@ -11,7 +11,7 @@ import { IInput } from 'src/app/models/iinput.model';
   styleUrls: ['./create-new-game.component.scss']
 })
 export class CreateNewGameComponent implements OnInit {
-	
+
 	public client: Stomp.Client;
 
   	constructor(private gameService: GameService) { }
@@ -26,7 +26,7 @@ export class CreateNewGameComponent implements OnInit {
 			console.error("Start Game failed");
 		});
 	}
-	
+
 	public connect(): void {
 		this.client = this.gameService.getStompClient();
 		let that = this;
@@ -40,13 +40,13 @@ export class CreateNewGameComponent implements OnInit {
 			console.error(error);
 		});
 	}
-	
+
 	public send(): void {
 		let input: IInput = {
 			action: "TEST ACTION"
-		}
+		};
 		let messageString = JSON.stringify(input);
-		this.client.send("/app/input", {}, messageString);
+		this.client.send("/api/input", {}, messageString);
 	}
 
 }

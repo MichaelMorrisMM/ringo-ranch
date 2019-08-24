@@ -1,7 +1,10 @@
 package ringoranch.models;
 
-public class Action {
-	
-	
+public enum Action {
+
+   ROLL_DICE,
+   BUY,
+   RENT,
+   END_TURN,
 
 }

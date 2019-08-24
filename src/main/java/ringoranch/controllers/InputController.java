@@ -11,12 +11,14 @@ import ringoranch.util.GameStateEvent;
 @Controller
 public class InputController {
 
-	@MessageMapping("/input")
+	@MessageMapping("/api/input")
 	@SendTo("/game-state")
 	public GameStateEvent submitInput(Input input) {
 	   if (!GameDirector.isGameRunning()) {
 	      GameDirector.startGame();
       }
+
+	   GameDirector.processInput(input);
 
 		return GameDirector.getGame().getLatestEvent();
 	}

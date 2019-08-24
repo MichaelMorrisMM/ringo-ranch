@@ -8,8 +8,8 @@ import ringoranch.util.StartGameResponse;
 
 @RestController
 public class StartGameController {
-	
-	@RequestMapping(value = "start-game", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/api/start-game", method = RequestMethod.POST)
 	public StartGameResponse startGame() {
 		return new StartGameResponse("Starting new game");
 	}

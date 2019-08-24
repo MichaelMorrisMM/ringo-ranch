@@ -6,7 +6,6 @@ public abstract class BoardSquare {
 	protected final int price;
 	protected final int baseRent;
 	protected Player owner;
-	protected int rent;
 
 	protected BoardSquare(String title, int price, int baseRent) {
 		this.title = title;
@@ -31,7 +30,19 @@ public abstract class BoardSquare {
 	}
 
 	public int getRent() {
-		return this.rent;
+		return this.baseRent;
 	}
+
+	public boolean getChargesRent() {
+	   return this.getRent() > 0;
+   }
+
+	public boolean getHasOwner() {
+	   return this.getOwner() != null;
+   }
+
+	public boolean getForSale() {
+	   return this.getPrice() > 0 && !this.getHasOwner();
+   }
 
 }
